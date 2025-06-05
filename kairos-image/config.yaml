@@ -1,0 +1,17 @@
+#cloud-config
+
+install:
+  auto: true
+  device: "auto"
+  reboot: true
+  bundles:
+  - targets:
+    - run:///run/initramfs/live/bundle.tar
+    local_file: true
+
+users:
+  - name: "kairos"
+    passwd: "kairos"
+    
+k3s:
+  enabled: true
